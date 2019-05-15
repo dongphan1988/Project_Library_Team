@@ -12,6 +12,7 @@
                 <th scope="col">phone</th>
                 <th scope="col">email</th>
                 <th scope="col">address</th>
+                <th scope="col"></th>
                 <th scope="col">image</th>
             </thead>
             @if(count($users)==0)
@@ -25,6 +26,7 @@
                 <td>{{$user->password}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->phone}}</td>
+                <td>{{$user->address}}</td>
                 <td>{{$user->address}}</td>
                 <td>input</td>
             </tr>
