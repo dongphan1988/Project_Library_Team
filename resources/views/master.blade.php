@@ -23,8 +23,8 @@
         <a href="">
             <button type="button" class="btn btn-outline-success" style="width: 100%">Page</button>
         </a>
-        <a href="">
-            <button type="button" class="btn btn-outline-primary " style="width: 100%">Page</button>
+        <a href="{{route('users.create')}}">
+            <button type="button" class="btn btn-outline-primary " style="width: 100%">ADD USER</button>
         </a>
         <a href="">
             <button type="button" class="btn btn-outline-success" style="width: 100%"> Page</button>

@@ -27,11 +27,14 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->phone}}</td>
                 <td>{{$user->address}}</td>
-                <td>{{$user->address}}</td>
-                <td>input</td>
+                <td>{{$user->role->name}}</td>
+                <td>
+                    <img src="{{asset('storage/'.$user->image)}}" style="width: 50px">
+                </td>
             </tr>
             </tbody>
                 @endforeach
+                {{$users->links()}}
                 @endif
         </table>
     </div>
