@@ -17,14 +17,14 @@
         <a href="">
             <button type="button" class="btn btn-outline-primary" style="width: 100%">Home</button>
         </a>
-        <a href="">
-            <button type="button" class="btn btn-outline-primary" style="width: 100%">Page</button>
+        <a href="{{route('users.index')}}">
+            <button type="button" class="btn btn-outline-primary" style="width: 100%">USERS LIST</button>
         </a>
         <a href="">
             <button type="button" class="btn btn-outline-success" style="width: 100%">Page</button>
         </a>
-        <a href="">
-            <button type="button" class="btn btn-outline-primary " style="width: 100%">Page</button>
+        <a href="{{route('users.create')}}">
+            <button type="button" class="btn btn-outline-primary " style="width: 100%">ADD USER</button>
         </a>
         <a href="">
             <button type="button" class="btn btn-outline-success" style="width: 100%"> Page</button>
