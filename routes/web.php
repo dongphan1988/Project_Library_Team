@@ -14,3 +14,8 @@
 Route::group(['prefix'=>'users'],function (){
    Route::get('/','UserController@index')->name('users.index');
 });
+Route::get('/','WelcomeController@home')->name('home.index');
+Route::group(['prefix'=>'login'],function (){
+   Route::get('/login','WelcomeController@login')->name('login.index');
+   Route::post('/login','WelcomeController@logintolibrary')->name('login.library');
+});
