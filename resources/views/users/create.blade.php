@@ -3,7 +3,7 @@
 @section('pagename','Add New User')
 @section('content')
     @if(Session::has('success'))
-        <p class="alert-danger">
+        <p class="alert-success">
             {{Session::get('success')}}
         </p>
         @endif
@@ -81,8 +81,6 @@
 
                     <div>
                         <button type="submit" class="btn-outline-success">ADD NEW USER</button>
-                    </div>
-                    <div>
                         <a href="{{route('users.index')}}">
                         <button type="button" class="btn-outline-success" onclick="window.history.go(-1)">BACK</button>
                         </a>

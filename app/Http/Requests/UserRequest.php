@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         $id = $this->request->get('id');
         return [
-//            'name'=>'required|min:3|max|30|unique:users,name,'. $id . ',id',
+            'name'=>'required|min:3|max:30|unique:users,name,'. $id . ',id',
             'email'=>'required|email|max:30|unique:users,email,'. $id . ',id',
             'password'=>'required|max:30',
         ];
@@ -33,15 +33,17 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-//            'name.required' => 'name  empty',
-//            'name.min' => 'need to be more than 3 characters',
-//            'name.max' => 'need to be less than 30 characters',
-//            'email.required' => 'email empty',
-//            'email.email' => 'incorrect email format',
-//            'email.max' => 'no more than 30 characters',
-//            'password.required' => 'password empty',
-//            'password.max' => 'no more than 30 characters',
-//            'phone.numeric' => 'only number',
+            'name.required' => 'name  empty',
+            'name.min' => 'need to be more than 3 characters',
+            'name.max' => 'need to be less than 30 characters',
+            'name.unique' => 'email exits',
+
+            'email.required' => 'email empty',
+            'email.email' => 'incorrect email format',
+            'email.max' => 'no more than 30 characters',
+            'email.unique' => 'email exits',
+            'password.required' => 'password empty',
+            'password.max' => 'no more than 30 characters',
 
         ];
             }
