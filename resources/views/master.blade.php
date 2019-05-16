@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<div style="text-align: center;color: #1d68a7;"><h1 class="display-3">CUSTOMER-CITY</h1></div>
+
+<div style="text-align: center;color: #1d68a7;"><h1 class="display-3">PDP LIBRARY</h1></div>
+
 <div style="text-align: center;color: #f6993f;"><h1 class="display-5">@yield('namepage')</h1></div>
 
 <div class="row">
@@ -17,14 +19,14 @@
         <a href="">
             <button type="button" class="btn btn-outline-primary" style="width: 100%">Home</button>
         </a>
-        <a href="">
-            <button type="button" class="btn btn-outline-primary" style="width: 100%">Page</button>
+        <a href="{{route('users.index')}}">
+            <button type="button" class="btn btn-outline-primary" style="width: 100%">USERS LIST</button>
         </a>
         <a href="">
             <button type="button" class="btn btn-outline-success" style="width: 100%">Page</button>
         </a>
-        <a href="">
-            <button type="button" class="btn btn-outline-primary " style="width: 100%">Page</button>
+        <a href="{{route('users.create')}}">
+            <button type="button" class="btn btn-outline-primary " style="width: 100%">ADD USER</button>
         </a>
         <a href="">
             <button type="button" class="btn btn-outline-success" style="width: 100%"> Page</button>
