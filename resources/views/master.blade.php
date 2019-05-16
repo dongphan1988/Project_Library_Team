@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<div style="text-align: center;color: #1d68a7;"><h1 class="display-3">CUSTOMER-CITY</h1></div>
+<div style="text-align: center;color: #1d68a7;"><h1 class="display-3">PDP LIBRARY</h1></div>
 <div style="text-align: center;color: #f6993f;"><h1 class="display-5">@yield('namepage')</h1></div>
 
 <div class="row">
