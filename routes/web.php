@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::group(['prefix' => 'categories'], function () {
     Route::get('/', 'CategoryController@index')->name('categories.index');
     Route::get('/create', 'CategoryController@create')->name('categories.create');
