@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class RoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,15 +25,15 @@ class CategoryRequest extends FormRequest
     {
         $id = $this->request->get('id');
         return [
-            'name' => 'required|unique:categories,name,' . $id . ',id'
+            'name' => 'required|unique:roles,name,' . $id . ',id'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' =>'name empty',
-            'name.unique' =>'name exits'
+            'name.required' => 'name empty',
+            'name.unique' => 'name exits'
         ];
     }
 }

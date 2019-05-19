@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -10,14 +11,14 @@ class CategoryController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        return view('categories.list', compact('categories'));
+        return view('categories.index', compact('categories'));
     }
     public function create(){
         $category = Category::all();
         return view('categories.create');
     }
 
-    public function store(Request $request){
+    public function store(CategoryRequest $request){
         $category = new Category();
         $category->name = $request->input('name');
         if($request->hasFile('image')){
@@ -26,7 +27,7 @@ class CategoryController extends Controller
             $category->image = $path;
         }        $category->save();
 
-        Session::flash('success', 'Thêm mới thể loại thành công');
+        Session::flash('success', 'add category sucess');
         return redirect()->route('categories.index');
     }
     public function edit($id){
@@ -35,7 +36,7 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Request $request, $id){
+    public function update(CategoryRequest $request, $id){
         $category = Category::findOrFail($id);
         $category->name     = $request->input('name');
         if($request->hasFile('image')){
@@ -45,7 +46,7 @@ class CategoryController extends Controller
         }
         $category->save();
 
-        Session::flash('success', 'Cập nhật thể loại sách thành công');
+        Session::flash('success', 'update success');
         return redirect()->route('categories.index');
     }
 
@@ -54,7 +55,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        Session::flash('success', 'Xóa thể loại sách thành công');
+        Session::flash('success', 'delete complete');
         return redirect()->route('categories.index');
     }
 }

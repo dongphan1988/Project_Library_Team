@@ -1,4 +1,4 @@
-<!--A Design by W3layouts
+    <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -36,10 +36,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <a href="#">Login With Facebook</a>
             </div>
             <h3>(or)</h3>
-            <form action="{{route('login.library')}}" method="post">
-                <input placeholder="Username or Email" name="Email" type="email" required="">
-                <input placeholder="Password" name="Password" type="password" required="">
-                <input type="submit" value="Get Started" name="login">
+            <form action="{{route('post.login')}}" method="post">
+                @csrf
+                @csrf
+                @if($errors->has('errorslogin'))
+                    <p class="alert-danger" style="color: #c51f1a">{{$errors->first('errorslogin')}}</p>
+                @endif
+                <input placeholder="Username or Email" name="email" type="email" required="">
+                @if($errors->has('email'))
+                    <p class="alert-danger" style="color: #c51f1a">{{$errors->first('email')}}</p>
+                    @endif
+                <input placeholder="Password" name="password" type="password" required="">
+                @if($errors->has('password'))
+                    <p class="alert-danger" style="color: #c51f1a">{{$errors->first('password')}}</p>
+                @endif
+                <input type="submit" value="Get Started">
                 </form>
             <h6><a href="#">Lost Your Password?</a></h6>
             <br/>
