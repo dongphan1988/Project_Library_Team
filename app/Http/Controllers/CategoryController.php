@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $categories = Category::all();
         return view('categories.index', compact('categories'));
