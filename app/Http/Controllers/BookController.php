@@ -33,8 +33,8 @@ class BookController extends Controller
         $categories = Category::all();
         if (count($categories) == 0) {
             Session::flash('success', 'category no date, you need create category before create books');
-            return redirect()->route('books.create');
-        } else
+            return redirect()->route('categories.create');
+        }
             return view('books.create', compact('categories'));
     }
 

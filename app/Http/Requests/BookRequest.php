@@ -26,7 +26,7 @@ class BookRequest extends FormRequest
         $id = $this->request->get('id');
         return [
             'name'=>'required|unique:books,name,' .$id. ',id',
-            'description'=>'max:40',
+            'description'=>'max:255',
             'qty'=>'required|numeric|min:1|max:200|',
         ];
     }

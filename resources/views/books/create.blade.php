@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label class="form-group">description</label>
-                        <input type="text" class="form-control" name="description" required>
+                        <textarea type="text" class="form-control" name="description" rows="4" cols="50"></textarea>
                         @if($errors->has('description'))
                             <p class="alert-danger">
                                 {{$errors->first('description')}}
