@@ -6,9 +6,17 @@ use Illuminate\Support\Facades\Session;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
         $users = User::paginate(5);
 
@@ -16,22 +24,27 @@ class UserController extends Controller
     }
     public function create(){
         $roles = Role::all();
+        if(count($roles) == 0){
+            Session::flash('success','role empty, you need create role before create users');
+            return view('roles.create');
+
+        }
         return view('users.create',compact('roles'));
     }
     public function store(UserRequest $request){
-        $users = new User();
-        $users->name =$request->name;
-        $users->email =$request->email;
-        $users->password =$request->password;
+        $user = new User();
+        $user->name =$request->name;
+        $user->email =$request->email;
+        $user->password =bcrypt($request->password);
         if($request->hasFile('image')){
             $image = $request->image;
             $path = $image->store('images','public');
-            $users->image = $path;
+            $user->image = $path;
         }
-        $users->phone =$request->phone;
-        $users->address =$request->address;
-        $users->role_id =$request->role_id;
-        $users->save();
+        $user->phone =$request->phone;
+        $user->address =$request->address;
+        $user->role_id =$request->role_id;
+        $user->save();
         Session::flash('success','add new user success');
         return redirect()->route('users.create');
     }
@@ -50,7 +63,7 @@ class UserController extends Controller
         $users = User::FindOrFail($userId);
         $users->name =$request->name;
         $users->email =$request->email;
-        $users->password =$request->password;
+        $users->password =bcrypt($request->password);
         if($request->hasFile('image')){
             $image = $request->image;
             $path = $image->store('images','public');

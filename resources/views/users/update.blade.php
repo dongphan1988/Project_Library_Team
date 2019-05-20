@@ -2,11 +2,7 @@
 @section('title','Edit user')
 @section('pagename','Edit User')
 @section('content')
-    @if(Session::has('success'))
-        <p class="alert-danger">
-            {{Session::get('success')}}
-        </p>
-    @endif
+
     @if(count($roles) ==0)
         <p class="alert-danger">Role empty, please create role before create user</p>
     @else

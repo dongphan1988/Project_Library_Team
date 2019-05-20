@@ -1,22 +1,25 @@
-@section('title', 'Thêm mới thể loại')
+@extends('master')
+@section('title', 'edit category')
+@section('namepage', 'edit category')
 @section('content')
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
-                <h1>Thêm Mới Thể Loại Sách</h1>
-            </div>
-            <div class="col-12">
-                <form method="post" action="{{ route('categories.store') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('categories.update',['category'=>$category->id]) }}" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="id" value="{{$category->id}}">
                     <div class="form-group">
                         <label>Tên thể loại</label>
-                        <input type="text" class="form-control" name="name"  placeholder="Enter name" required>
+                        <input type="text" class="form-control" name="name"  value="{{$category->name}}" required>
+                        @if($errors->has('name'))
+                            <p class="alert-danger">{{$errors->first('name')}}</p>
+                            @endif
                     </div>
                     <div class="form-group">
                         <label for="">Hình ảnh</label>
-                        <input type="file" class="form-control" name="image" placeholder="Enter image" required>
+                        <input type="file" class="form-control" name="image">
                     </div>
-                    <button type="submit" class="btn btn-primary">Thêm</button>
+                    <button type="submit" class="btn btn-primary">UPDATE</button>
                 </form>
             </div>
         </div>

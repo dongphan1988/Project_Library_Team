@@ -1,15 +1,8 @@
 @extends('master')
 @section('title','Create user')
-@section('pagename','Add New User')
+@section('namepage','Add New User')
 @section('content')
-    @if(Session::has('success'))
-        <p class="alert-success">
-            {{Session::get('success')}}
-        </p>
-        @endif
-    @if(count($roles) ==0)
-        <p class="alert-danger">Role empty, please create role before create user</p>
-        @else
+
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
@@ -91,5 +84,4 @@
         </div>
 
     </div>
-    @endif
 @endsection
